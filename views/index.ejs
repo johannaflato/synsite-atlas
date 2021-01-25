@@ -1,0 +1,12 @@
+<%- include('partials/header'); -%>
+<main id="index">
+  <h1 class="channel-title"><%= title %></h1>
+  <div class="grid">
+    <% for (let block of helpers.shuffle(contents)) { %>
+      <% if (block.image) { %>
+        <%- include('partials/block-image', { block: block }); -%>
+      <% } %>
+    <% } %>
+  </div>
+</main>
+<%- include('partials/footer'); -%>
