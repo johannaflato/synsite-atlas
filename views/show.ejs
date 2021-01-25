@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+<main id="show">
+  <div class="block">
+    <% if (image) { %>
+      <img src="<%= image.large.url %>" />
+    <% } %>
+  </div>
+  <div class="block-metadata">
+    <div class="block-metadata-title"><%= title %></div>
+    <% if (description_html) { %>
+      <div clas="block-metadata-description">
+        <%- description_html %>
+      </div>
+    <% } %>
+    <% if (source) { %>
+      <div clas="block-metadata-source">
+        Source: <a href="<%= source.url %>"><%= source.title %></a>
+      </div>
+    <% } %>
+  </div>
+</main>
+<%- include('partials/footer'); -%>

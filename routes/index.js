@@ -4,13 +4,14 @@ const router = express.Router();
 const Arena = require('are.na');
 
 router.get('/', (req, res, next) => {
-  const arena = new Arena;
 
+  const arena = new Arena();
   arena
-    .channel(process.env.ARENA_CHANNEL_ID).get()
-    .then(data =>
-      res.render('index', data)
-    )
+    .channel(process.env.ARENA_CHANNEL_ID)
+    .get()
+    .then(data => {
+      return res.render('index', data)
+    })
     .catch(next);
 });
 
