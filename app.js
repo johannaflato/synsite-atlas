@@ -8,6 +8,9 @@ const cleanStack = require('clean-stack');
 
 // loads variables in `.env` file into `process.env` global
 require('dotenv').config()
+if (!process.env.ARENA_CHANNEL_ID) {
+  throw new Error('ARENA_CHANNEL_ID env var not set.')
+}
 
 const index = require('./routes/index');
 const channels = require('./routes/channels');
@@ -48,8 +51,11 @@ app.use((req, res, next) => {
 // Error handler
 app.use((err, req, res, next) => {
   const status = err.status || 500;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.locals.error.stack = cleanStack(err.stack, { pretty: true, })
+  res.locals.error = {};
+  if (process.env.NODE_ENV === 'development') {
+    res.locals.error =  err;
+    res.locals.error.stack = cleanStack(err.stack, { pretty: true, })      
+  }
   res.locals.status = status;
   res.status(status);
   res.render('error');
