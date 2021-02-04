@@ -4,7 +4,7 @@
     <% if (image) { %>
       <img src="<%= image.large.url %>" />
     <% } %>
-    <% if (text) { %>
+    <% else if (text) { %>
       <div class="block-content">
         <%= content %>
       </div>
