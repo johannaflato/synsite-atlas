@@ -6,6 +6,12 @@
       <% if (block.image) { %>
         <%- include('partials/block-image', { block: block }); -%>
       <% } %>
+      <% if (block.text) { %>
+        <%- include('partials/block-text', { block: block }); -%>
+      <% } %>
+      <!-- <% if (block.channel) { %>
+        <%- include('partials/block-channel', { block: block }); -%>
+      <% } %> -->
     <% } %>
   </div>
 </main>
