@@ -54,7 +54,7 @@ app.use((err, req, res, next) => {
   res.locals.error = {};
   if (process.env.NODE_ENV === 'development') {
     res.locals.error =  err;
-    res.locals.error.stack = cleanStack(err.stack, { pretty: true, })      
+    res.locals.error.stack = cleanStack(err.stack, { pretty: true, })
   }
   res.locals.status = status;
   res.status(status);
