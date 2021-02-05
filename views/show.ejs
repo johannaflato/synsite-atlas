@@ -4,21 +4,16 @@
     <% if (image) { %>
       <img src="<%= image.large.url %>" />
     <% } %>
-    <% if (text) { %>
-      <div class="block-content">
-        <%= content %>
-      </div>
-    <% } %>
   </div>
   <div class="block-metadata">
     <div class="block-metadata-title"><%= title %></div>
     <% if (description_html) { %>
-      <div class="block-metadata-description">
+      <div clas="block-metadata-description">
         <%- description_html %>
       </div>
     <% } %>
     <% if (source) { %>
-      <div class="block-metadata-source">
+      <div clas="block-metadata-source">
         Source: <a href="<%= source.url %>"><%= source.title %></a>
       </div>
     <% } %>
