@@ -13,7 +13,7 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  font-family: 'Cousine', sans-serif;
+  font-family: 'Cousine', 'Helvetica', sans-serif;
   font-size: 15px;
   line-height: 1.33;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +43,7 @@ h3 {
 .channel-title {
   margin: 3em;
   text-align: center;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 .grid {
@@ -52,8 +52,7 @@ h3 {
 
 .grid-block {
   display: inline-block;
-  min-width: 250px;
-  border:1px dashed #333;
+  /*max-width: 250px;*/
 }
   .grid-block > img {
     opacity: 0;

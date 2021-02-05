@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // triggers fade-in
       image.classList.add('img--loaded')
     }
-
+  
     // sets up grid layout
     const packery = new Packery('.grid', {
       itemSelector: '.grid-block',
-      gutter: 10,
+      gutter: 5,
       percentPosition: true,
     });
-
+  
     // adds draggable behavior
     for (let item of packery.items) {
       const drag = new Draggabilly(item.element);
       packery.bindDraggabillyEvents(drag);
     }
-  });
+  });  
 });
