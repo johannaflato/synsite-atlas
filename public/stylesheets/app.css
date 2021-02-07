@@ -57,7 +57,13 @@ h3 {
   text-align: left;
   font-weight: normal;
 }
-
+.block-content-clicked {
+  margin: 20em;
+  text-align: left;
+  font-weight: normal;
+  border: 1px dashed #333;
+  padding: 5em;
+}
 .grid {
   margin: 5px;
 }

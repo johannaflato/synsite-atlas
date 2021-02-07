@@ -4,7 +4,14 @@
     <% if (image) { %>
       <img src="<%= image.large.url %>" />
     <% } %>
-  </div>
+    <%# special section for text %>
+    <% if (content) { %>
+      <div class="block-content-clicked">
+        <%- content %>
+      </div>
+    <% } %>
+
+</div>
   <div class="block-metadata">
     <div class="block-metadata-title"><%= title %></div>
     <% if (description_html) { %>

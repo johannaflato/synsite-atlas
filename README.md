@@ -17,6 +17,7 @@ echo "ARENA_CHANNEL_ID=yourchannelslug" >> .env
 ## Start dev server
 
 ```
+cd documents/github/synsite-atlas
 foreman run yarn start
 server Listening on port 3000 +0ms
 ```
