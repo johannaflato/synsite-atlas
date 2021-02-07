@@ -46,6 +46,18 @@ h3 {
   font-weight: normal;
 }
 
+.block-title {
+  margin: 3em;
+  text-align: center;
+  font-weight: normal;
+}
+
+.block-content {
+  margin: 1.5em;
+  text-align: left;
+  font-weight: normal;
+}
+
 .grid {
   margin: 5px;
 }
@@ -55,6 +67,9 @@ h3 {
   min-width: 250px;
   border:1px dashed #333;
 }
+/* .grid-block.grid-block-text {
+} */
+
   .grid-block > img {
     opacity: 0;
     transition: opacity 500ms;
@@ -87,3 +102,10 @@ h3 {
   margin: 0 auto;
   padding: 5px;
 }
+
+/* @media only screen and (max-width: 600px) {
+  body, html {
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+  } */
