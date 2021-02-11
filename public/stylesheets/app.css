@@ -21,7 +21,6 @@ body {
 }
 
 a {
-  color: gray;
   text-decoration: none;
 }
 
@@ -35,9 +34,14 @@ img {
 h1,
 h2,
 h3 {
+  color: #333;
   font-weight: normal;
   font-size: 100%;
   margin: 0;
+}
+
+p {
+  color: #333;
 }
 
 .channel-title {
@@ -47,9 +51,11 @@ h3 {
 }
 
 .block-title {
-  margin: 3em;
   text-align: center;
   font-weight: normal;
+  border-radius: 20px;
+  border:1px dashed #333;
+  padding: 0.5em;
 }
 
 .block-content {
@@ -57,6 +63,7 @@ h3 {
   text-align: left;
   font-weight: normal;
 }
+
 .block-content-clicked {
   margin: 20em;
   text-align: left;
@@ -64,17 +71,17 @@ h3 {
   border: 1px dashed #333;
   padding: 5em;
 }
+
 .grid {
-  margin: 5px;
+  margin: 10px;
+  width: 100VW;
+  height: 100VH;
 }
 
 .grid-block {
   display: inline-block;
   min-width: 250px;
-  border:1px dashed #333;
 }
-/* .grid-block.grid-block-text {
-} */
 
   .grid-block > img {
     opacity: 0;
@@ -84,6 +91,15 @@ h3 {
     .grid-block > .img--loaded {
       opacity: 1;
     }
+
+.stamp {
+  position: fixed;
+  width: 40%;
+  height: 50%;
+  border: none;
+  left: 30%;
+  top: 30%;
+}
 
 .block {
   display: flex;

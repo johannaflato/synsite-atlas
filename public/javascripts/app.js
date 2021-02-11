@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       itemSelector: '.grid-block',
       gutter: 10,
       percentPosition: true,
+      stamp: '.stamp'
     });
 
     // adds draggable behavior
