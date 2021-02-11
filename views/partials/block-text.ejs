@@ -3,5 +3,5 @@
   href="<%= `/blocks/${block.id}` %>"
   style="<%= `width: ${helpers.rand(100, 400)}px;` %>"
 >
-  <h3 class="block-content"><%= block.content %></h3>
+  <div class="block-content"><%- block.content_html %></div>
 </a>
