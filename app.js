@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cleanStack = require('clean-stack');
 
+const router = express.Router();
+
 // loads variables in `.env` file into `process.env` global
 require('dotenv').config()
 if (!process.env.ARENA_CHANNEL_ID) {
@@ -17,6 +19,7 @@ const channels = require('./routes/channels');
 const blocks = require('./routes/blocks');
 
 const helpers = require('./middleware/helpers');
+const definitions = require('./middleware/definitions');
 
 const app = express();
 
@@ -35,11 +38,17 @@ app
   .use(express.static(path.join(__dirname, 'public')))
   .use(helpers);
 
-// Mount routers
-app
+// Setup view router
+router
   .use('/', index)
   .use('/channels', channels)
   .use('/blocks', blocks);
+
+// Mount router & definition middleware twice, once at the root level
+// and once under a slug for the definition version/id
+app
+  .use(['/', '/:definition(\\d+)'], definitions) // :definition(\\d+) matches one or more digits
+  .use(['/', '/:definition(\\d+)'], router)
 
 // Catches 404 and forwards to error handler
 app.use((req, res, next) => {
@@ -52,7 +61,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   res.locals.error = {};
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV !== 'production') {
     res.locals.error =  err;
     res.locals.error.stack = cleanStack(err.stack, { pretty: true, })      
   }
