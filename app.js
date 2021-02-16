@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   res.locals.error = {};
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV !== 'production') {
     res.locals.error =  err;
     res.locals.error.stack = cleanStack(err.stack, { pretty: true, })      
   }
