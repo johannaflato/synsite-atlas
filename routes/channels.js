@@ -2,15 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Arena = require('are.na');
 
-router.get('/:id', (req, res, next) => {
-
+router.get('/:id', async (req, res) => {
+  if (!res.locals.definition) next(); // 404
   const arena = new Arena();
-  arena
-    .channel(req.params.id).get()
-    .then(data =>
-      res.render('channel', data)
-    )
-    .catch(next);
+  const data = await arena.channel(req.params.id).get()
+  data.definition = req.definition;
+  data.definitionPathPrefix = req.definitionPathPrefix;
+  data.definitions = req.definitions;
+  res.render('channel', data)
 });
 
 module.exports = router;

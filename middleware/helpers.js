@@ -1,3 +1,5 @@
+const format = require('date-fns/format')
+
 const shuffle = (xs) => {
   let i = xs.length, tmp, ri;
 
@@ -19,6 +21,7 @@ module.exports = (req, res, next) => {
   res.locals.helpers = {
     shuffle,
     rand,
+    dateFnsFormat: format
   };
 
   next();

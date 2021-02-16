@@ -1,12 +1,13 @@
 <%- include('partials/header'); -%>
 <main id="index">
-  <h1 class="channel-title"><%= title %></h1>
+  <h1 class="page-title">
+    <%= title %>
+  </h1>
   <div class="grid">
+    <%- include('partials/definition', { block: definition, definitionPathPrefix, definitions }); -%>
     <% for (let block of helpers.shuffle(contents)) { %>
-      <% if (block.id == '10694608') { %>
-        <%- include('partials/definition', { block: block }); -%>
-      <% } else if (block.class == 'Channel') { %>
-        <%- include('partials/block-channel-title', { block: block }); -%>
+      <% if (block.class == 'Channel') { %>
+        <%- include('partials/block-channel-title', { block, definitionPathPrefix }); -%>
       <% } %>
     <% } %>
   </div>

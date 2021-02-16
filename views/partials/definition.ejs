@@ -1,6 +1,17 @@
-<a
-  class="stamp"
-  href="<%= `/blocks/${block.id}` %>"
->
-  <div><%- block.content_html %></div>
-</a>
+<div class="stamp">
+  <a
+    href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
+  >
+    <div>
+      <%- block.content_html %>
+    </div>
+  </a>
+  <p>
+    Versions: 
+    <% for (let definition of definitions) { %>
+      <a href="<%= `/${definition.id}/` %>">
+        <%= helpers.dateFnsFormat(new Date(definition.updated_at), 'MM/dd/yyyy') %>
+      </a>
+    <% } %>
+  </p>
+</div>

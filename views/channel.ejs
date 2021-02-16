@@ -1,14 +1,16 @@
 <%- include('partials/header'); -%>
 <main id="channel">
-  <h1 class="channel-title"><%= title %></h1>
+  <h1 class="page-title">
+    <%= title %>
+  </h1>
   <div class="grid">
     <% for (let block of helpers.shuffle(contents)) { %>
       <% if (block.class == 'Image') { %>
-        <%- include('partials/block-image', { block: block }); -%>
+        <%- include('partials/block-image', { block }); -%>
       <% } else if (block.class == 'Text') { %>
-        <%- include('partials/block-text', { block: block }); -%>
+        <%- include('partials/block-text', { block }); -%>
       <% } else if (block.class == 'Channel') { %>
-        <%- include('partials/block-channel-title', { block: block }); -%>
+        <%- include('partials/block-channel-title', { block }); -%>
       <% } %>
     <% } %>
   </div>
