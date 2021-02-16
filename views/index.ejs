@@ -3,10 +3,9 @@
   <h1 class="channel-title"><%= title %></h1>
   <div class="grid">
     <% for (let block of helpers.shuffle(contents)) { %>
-      <%- include('partials/definition', { block: block }); -%>
-      <% if (block.image) { %>
-        <%- include('partials/block-image', { block: block }); -%>
-      <% } else { %>
+      <% if (block.id == '10694608') { %>
+        <%- include('partials/definition', { block: block }); -%>
+      <% } else if (block.class == 'Channel') { %>
         <%- include('partials/block-channel-title', { block: block }); -%>
       <% } %>
     <% } %>
