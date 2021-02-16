@@ -6,9 +6,6 @@ router.get('/:id', async (req, res) => {
   if (!res.locals.definition) next(); // 404
   const arena = new Arena();
   const data = await arena.channel(req.params.id).get()
-  data.definition = req.definition;
-  data.definitionPathPrefix = req.definitionPathPrefix;
-  data.definitions = req.definitions;
   res.render('channel', data)
 });
 

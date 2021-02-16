@@ -6,11 +6,11 @@
   <div class="grid">
     <% for (let block of helpers.shuffle(contents)) { %>
       <% if (block.class == 'Image') { %>
-        <%- include('partials/block-image', { block }); -%>
+        <%- include('partials/block-image', { block, definitionPathPrefix }); -%>
       <% } else if (block.class == 'Text') { %>
-        <%- include('partials/block-text', { block }); -%>
+        <%- include('partials/block-text', { block, definitionPathPrefix}); -%>
       <% } else if (block.class == 'Channel') { %>
-        <%- include('partials/block-channel-title', { block }); -%>
+        <%- include('partials/block-channel-title', { block, definitionPathPrefix}); -%>
       <% } %>
     <% } %>
   </div>

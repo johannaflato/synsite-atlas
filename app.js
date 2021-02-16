@@ -47,7 +47,7 @@ router
 // Mount router & definition middleware twice, once at the root level
 // and once under a slug for the definition version/id
 app
-  .use(['/', '/:definition(\\d+)'], definitions)
+  .use(['/', '/:definition(\\d+)'], definitions) // :definition(\\d+) matches one or more digits
   .use(['/', '/:definition(\\d+)'], router)
 
 // Catches 404 and forwards to error handler
