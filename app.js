@@ -36,19 +36,21 @@ app
   .use(bodyParser.urlencoded({ extended: false }))
   .use(cookieParser())
   .use(express.static(path.join(__dirname, 'public')))
-  .use(helpers);
+  .use(helpers)
+   // add current or matched definition to template res.locals
+  .use(definitions);
 
 // Setup view router
 router
   .use('/', index)
   .use('/channels', channels)
-  .use('/blocks', blocks);
+  .use('/blocks', blocks); 
 
-// Mount router & definition middleware twice, once at the root level
-// and once under a slug for the definition version/id
+// Mount router routes twice, once at the root level
+// and once under a slug for the definition version/block-id
 app
-  .use(['/', '/:definition(\\d+)'], definitions) // :definition(\\d+) matches one or more digits
-  .use(['/', '/:definition(\\d+)'], router)
+  .use('/', router)
+  .use('/:definition(\\d+)', router) // :definition(\\d+) matches one or more digits
 
 // Catches 404 and forwards to error handler
 app.use((req, res, next) => {
