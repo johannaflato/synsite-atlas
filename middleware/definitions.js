@@ -14,12 +14,12 @@ module.exports = async (req, res, next) => {
     .filter(block => block.class == 'Text')
     .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-  const m = matchPathDefinition(req.path);
+  const match = matchPathDefinition(req.path);
 
   let definition;
   let definitionPathPrefix;
-  if (m) {
-    const id = m.params.definition;
+  if (match) {
+    const id = match.params.definition;
     definition = definitions.find(block => block.id == id);
     if (typeof definition == 'undefined') {
       // if definition id is not found, go to next middleware
