@@ -2,7 +2,7 @@ const { match } = require("path-to-regexp");
 const Arena = require('are.na');
 
 const { ARENA_CHANNEL_ID } = process.env;
-const matchPathDefinition = match('/:definition(\\d+)', { decode: decodeURIComponent });
+const matchPathDefinition = match('/:definition(\\d+)', { decode: decodeURIComponent, end: false });
 
 module.exports = async (req, res, next) => {
 
@@ -33,7 +33,6 @@ module.exports = async (req, res, next) => {
     definition = definitions[0];
     definitionPathPrefix = '';
   }
-  
   // expose definition(s) on template locals
   res.locals.definition = definition;
   res.locals.definitionPathPrefix = definitionPathPrefix;
