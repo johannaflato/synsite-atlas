@@ -1,7 +1,7 @@
 <a
   class="grid-block"
   href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
-  style="<%= `width: ${helpers.rand(100, 400)}px;` %>"
+  style="<%= `width: ${helpers.rand(200, 350)}px;` %>; <%= `transform: rotate(${helpers.rand(-5, 5)}deg);` %>"
 >
   <div class="block-content"><%- block.content_html %></div>
 </a>
