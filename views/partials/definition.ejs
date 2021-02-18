@@ -7,11 +7,16 @@
     </div>
   </a>
   <p>
-    Versions: 
+    < VERSIONS >
     <% for (let definition of definitions) { %>
       <a href="<%= `/${definition.id}/` %>">
         <%= helpers.dateFnsFormat(new Date(definition.updated_at), 'MM/dd/yyyy') %>
       </a>
     <% } %>
+  </p>
+  <p>
+    < EDITS? >
+    please freely share any notes or edits you might have in
+      <a href="https://www.are.na/johanna-flato/syn-site-edits"> this open are.na channel</a>.
   </p>
 </div>

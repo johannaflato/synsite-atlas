@@ -61,6 +61,7 @@ p {
 .block-content {
   margin: 1.5em;
   text-align: left;
+  font-size: 10px;
   font-weight: normal;
 }
 

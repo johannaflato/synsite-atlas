@@ -2,22 +2,13 @@
 
 SYN-SITE ATLAS is adapted from Are.na's Warburg boilerplate.
 
-## Run locally
+## dev server
 
 ```bash
 cd synsite-atlas
 
 yarn install
 
-touch .env
-
-echo "ARENA_CHANNEL_ID=yourchannelslug" >> .env
 ```
-
-## Start dev server
-
-```
-cd documents/github/synsite-atlas
 foreman run yarn start
 server Listening on port 3000 +0ms
-```

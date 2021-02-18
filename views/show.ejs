@@ -1,13 +1,18 @@
 <%- include('partials/header'); -%>
 <main id="show">
   <h1 class="page-title">
-    <%= title %>
+        notes towards <a href="/">a syn-site</a>: <%= title %>
   </h1>
   <div class="block">
-    <% if (image) { %>
+    <%# blocks are either from 'source' (embed, image, link) or 'content' (text w markup). the below shows a large image if it isn't a 'media' embed (youtube or vimeo video) %>
+    <% if (embed) { %>
+      <a href="<%= source.url %>">
+        <img src="<%= image.large.url %>" />
+      </a>
+    <% } else { %>
       <img src="<%= image.large.url %>" />
     <% } %>
-    <%# special section for text %>
+    <%# this bit is for text %>
     <% if (content) { %>
       <div class="block-content-clicked">
         <%- content_html %>

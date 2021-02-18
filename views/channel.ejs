@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 <main id="channel">
   <h1 class="page-title">
-    <%= title %>
+    notes towards <a href="/">a syn-site</a>: <%= title %>
   </h1>
   <div class="grid">
     <% for (let block of helpers.shuffle(contents)) { %>
@@ -9,6 +9,12 @@
         <%- include('partials/block-image', { block, definitionPathPrefix }); -%>
       <% } else if (block.class == 'Text') { %>
         <%- include('partials/block-text', { block, definitionPathPrefix}); -%>
+      <% } else if (block.class == 'Link') { %>
+        <%- include('partials/block-link', { block, definitionPathPrefix}); -%>
+      <% } else if (block.class == 'Attachment') { %>
+        <%- include('partials/block-attachment', { block, definitionPathPrefix}); -%>
+      <% } else if (block.class == 'Media') { %>
+        <%- include('partials/block-media', { block, definitionPathPrefix}); -%>
       <% } else if (block.class == 'Channel') { %>
         <%- include('partials/block-channel-title', { block, definitionPathPrefix}); -%>
       <% } %>
