@@ -4,6 +4,7 @@
     notes towards <a href="/">a syn-site</a>: <%= title %>
   </h1>
   <div class="grid">
+    <%- include('partials/definition', { block: definition, definitionPathPrefix, definitions }); -%>
     <% for (let block of helpers.shuffle(contents)) { %>
       <% if (block.class == 'Image') { %>
         <%- include('partials/block-image', { block, definitionPathPrefix }); -%>
