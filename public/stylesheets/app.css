@@ -200,6 +200,25 @@ p {
   padding: 5px;
 }
 
+.connections {
+  display: inline-block;
+}
+
+.connection {
+  display: inline-block;
+}
+
+.footer-gradient {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  margin-top: 0px;
+  padding: 2em;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 100%, 0)), color-stop(40%, hsla(0, 0%, 100%, 0.3)), to(#fff));
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.3) 40%, #fff);
+  }
+
 /* @media only screen and (max-width: 600px) {
   body, html {
     height: 100%;

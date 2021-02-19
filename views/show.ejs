@@ -16,6 +16,14 @@
   </div>
   <div class="block-metadata">
     <div class="block-metadata-title"><%= title %></div>
+    <%# need to specify user_id so as not to end up in stranger's channels
+    if (user_id == 'johanna-flato') {} %>
+    <div class="connections">
+      filed under:
+        <% for (let block of helpers.shuffle(connections)) { %>
+          <%- include('partials/connection', { block, definitionPathPrefix }); -%>
+        <% } %>
+    </div>
     <% if (description_html) { %>
       <div class="block-metadata-description">
         <%- description_html %>
