@@ -1,9 +1,12 @@
 <%- include('partials/header'); -%>
 <main id="channel">
   <h1 class="page-title">
-    notes towards <a href="/">a syn-site</a>: <%= title %>
+    <a href="/">syn-site</a> | "<%= title %>" marginalia
   </h1>
   <div class="grid">
+    <div class="stamp blank-stamp-top-left"></div>
+    <div class="stamp blank-stamp-top-right"></div>
+    <div class="stamp blank-stamp-top-center"></div>
     <%- include('partials/definition', { block: definition, definitionPathPrefix, definitions }); -%>
     <% for (let block of helpers.shuffle(contents)) { %>
       <% if (block.class == 'Image') { %>
@@ -21,5 +24,6 @@
       <% } %>
     <% } %>
   </div>
+  <div class="footer-gradient"></div>
 </main>
 <%- include('partials/footer'); -%>

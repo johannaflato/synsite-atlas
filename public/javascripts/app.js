@@ -9,9 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // sets up grid layout
     const packery = new Packery('.grid', {
       itemSelector: '.grid-block',
-      gutter: 10,
-      percentPosition: true,
-      stamp: '.stamp'
+      gutter: 5,
+      percentPosition: false,
+      stamp: '.stamp',
+      // containerStyle: {
+      //       position: 'absolute'
+      //   },
+      // transitionDuration: '500ms',
+      // stagger: 30,
+      // isOriginLeft: false,
+      // isOriginTop: false,
+      // isHorizontal:true,
     });
 
     // adds draggable behavior
