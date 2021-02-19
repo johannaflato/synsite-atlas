@@ -57,12 +57,15 @@ p {
   background-image: linear-gradient(180deg, #fff 5%, hsla(0, 0%, 100%, 0));
 }
 
-.block-title {
+.channel-block {
   text-align: center;
-  font-weight: normal;
-  border-radius: 20px;
-  border:1px dashed #333;
-  padding: 0.5em;
+  border:1px dashed blue;
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+.channel-block:hover {
+  font-style: normal;
 }
 
 .block-content {

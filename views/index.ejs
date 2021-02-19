@@ -7,7 +7,7 @@
     <%- include('partials/definition', { block: definition, definitionPathPrefix, definitions }); -%>
     <% for (let block of helpers.shuffle(contents)) { %>
       <% if (block.class == 'Channel') { %>
-        <%- include('partials/block-channel-title', { block, definitionPathPrefix }); -%>
+        <%- include('partials/channel-block', { block, definitionPathPrefix }); -%>
       <% } %>
     <% } %>
   </div>
