@@ -10,9 +10,10 @@ module.exports = async (req, res, next) => {
   const data = await arena.channel(ARENA_CHANNEL_ID).get();
   // filter the default channel's blocks by the 'Text' class
   // and then sort by date last updated, descending
+  //changed from updated --> created
   const definitions = data.contents
     .filter(block => block.class == 'Text')
-    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
   const match = matchPathDefinition(req.path);
 

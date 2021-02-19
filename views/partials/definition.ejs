@@ -1,7 +1,5 @@
-<div class="stamp">
-  <a
-    href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
-  >
+<div class="stamp stamp-definition">
+  <a>
     <div>
       <%- block.content_html %>
     </div>
@@ -10,13 +8,13 @@
     < VERSIONS >
     <% for (let definition of definitions) { %>
       <a href="<%= `/${definition.id}/` %>">
-        <%= helpers.dateFnsFormat(new Date(definition.updated_at), 'MM/dd/yyyy') %>
+        <%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy' ) %>
       </a>
     <% } %>
   </p>
   <p>
     < EDITS? >
     please freely share any notes or edits you might have in
-      <a href="https://www.are.na/johanna-flato/syn-site-edits"> this open are.na channel</a>.
+      <a href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">> this open are.na channel</a>.
   </p>
 </div>
