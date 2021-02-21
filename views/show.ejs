@@ -16,12 +16,13 @@
   </div>
   <div class="block-metadata">
     <div class="block-metadata-title"><%= title %></div>
-    <%# need to specify user_id so as not to end up in stranger's channels
-    if (user_id == 'johanna-flato') {} %>
+    <%# specifying user_id so as not to return stranger's channels %>
     <div class="connections">
       filed under:
         <% for (let block of helpers.shuffle(connections)) { %>
-          <%- include('partials/connection', { block, definitionPathPrefix }); -%>
+          <% if (block.user_id == '11412') { %>
+            <%- include('partials/connection', { block, definitionPathPrefix }); -%>
+          <% } %>
         <% } %>
     </div>
     <% if (description_html) { %>
