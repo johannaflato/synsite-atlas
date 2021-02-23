@@ -1,5 +1,6 @@
-<%- include('partials/header'); -%>
+<%- include('partials/head'); -%>
 <main id="error">
+  <%- include('partials/nav'); -%>
   <h1 class="page-title">Error <%= status %></h1>
   <pre class="error-trace">
     <%= error.stack %>

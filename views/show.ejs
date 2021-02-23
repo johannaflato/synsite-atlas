@@ -1,13 +1,11 @@
-<%- include('partials/header'); -%>
+<%- include('partials/head'); -%>
 <main id="show">
-  <h1 class="page-title">
-    <a href="/">syn-site</a> | marginalia detail
-  </h1>
+  <%- include('partials/nav'); -%>
   <div class="block">
     <% if (embed) { %>
       <a href="<%= source.url %>"><img src="<%= image.large.url %>" /></a>
     <% } else if (content) {%>
-      <div class="block-content-clicked">
+      <div class="content-show">
         <%- content_html %>
       </div>
     <% } else { %>
