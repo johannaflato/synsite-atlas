@@ -13,24 +13,26 @@
     <% } %>
   </div>
   <div class="block-metadata">
-    <div class="block-metadata-title"><%= title %></div>
-    <%# specifying user_id so as not to return stranger's channels %>
-    <div class="connections">
-      filed under:
-        <% for (let block of helpers.shuffle(connections)) { %>
-          <% if (block.user_id == '11412') { %>
-            <%- include('partials/connection', { block, definitionPathPrefix }); -%>
-          <% } %>
-        <% } %>
-    </div>
+    <h2 class="block-metadata-title"><%= title %></h2>
     <% if (description_html) { %>
       <div class="block-metadata-description">
         <%- description_html %>
       </div>
     <% } %>
+    <div>
+      <%# specifying user_id so as not to return stranger's channels %>
+      <%# formatted to remove inline whitespace %>
+      <ul class="connections">
+        <i>filed under:</i>
+        <% for (let block of connections) { %><%
+          if (block.user_id == '11412') { %><li>
+            <%-include('partials/connection', { block, definitionPathPrefix }); -%></li><%
+          } %><% } %>
+      </ul>
+    </div>
     <% if (source) { %>
       <div class="block-metadata-source">
-        Source: <a href="<%= source.url %>"><%= source.title %></a>
+        <i>source: </i><a class="external-link" href="<%= source.url %>"><%= source.title %></a>
       </div>
     <% } %>
   </div>
