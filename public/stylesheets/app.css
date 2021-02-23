@@ -151,6 +151,30 @@ strong {
   .text-block:visited {
     color: black;
   }
+
+.channel-title {
+  position: absolute;
+  top: 26vh;
+  margin-top: -14px;
+  width: 100%;
+  text-align: center;
+  font-family: ibm-plex-mono, cousine, monospace;
+  font-size: 14px;
+  letter-spacing: 1.8px;
+  color: crimson;
+}
+
+  .channel-title p {
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .channel-title h2 {
+    display: inline-block;
+    font-weight: 400;
+    /* font-style: italic; */
+  }
+
 .stamp {
   position: absolute;
   width: 15vw;
@@ -167,32 +191,132 @@ strong {
     top: 0px;
   }
 
-  .blank-stamp-top-center {
-    left: 40%;
-    top: 0px;
-    height: 100px;
-    transform: rotate(-15deg);
-  }
-
-  .blank-stamp-index {
-    left: 15%;
-    top: 0px;
-    width: 70VW;
-    height: 120px;
-    /* transform: rotate(-5deg); */
-  }
-
-  .stamp-definition {
-    position: fixed;
-    width: 40%;
+  .definition-wrapper {
+    left: 33vw;
+    top: 30vh;
+    width: 34vw;
     height: auto;
     border: none;
-    margin-top: 0;
-    margin-bottom: 1%;
-    margin-left: 1%;
-    margin-right: 1%;
-    left: 25%;
-    top: 30%;
+    margin: 0 1.5em 1.5em 1.5em;
+    padding: 1em;
+  }
+
+.definition-header {
+  padding-bottom: 0.75em;
+}
+
+  .syn-site {
+    font-family: halyard-micro, Arial, sans-serif;
+    display: inline-block;
+    font-size: 45px;
+    font-weight: 600;
+  }
+
+    .syn-site::after,
+    .pronounciation::after {
+      content: "\00A0";
+    }
+
+  .pronounciation {
+    font-family: halyard-text, sans-serif;
+    display: inline-block;
+    height: 100%;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+  }
+
+  .n {
+    display: inline-block;
+    height: 100%;
+    font-size: 32px;
+    font-weight: 200;
+    font-style: italic;
+  }
+
+.etym {
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+  font-family: halyard-micro, Arial, sans-serif;
+  line-height: 1.1;
+  font-weight: 300;
+  font-variant-caps: all-small-caps;
+  -moz-font-feature-settings: "c2sc", "smcp";
+  -webkit-font-feature-settings: "c2sc", "smcp";
+  font-feature-settings: "c2sc", "smcp";
+}
+
+.etym b {
+  font-weight: 600;
+}
+
+.etym i {
+  font-weight: 400;
+}
+
+.no-caps {
+  font-variant-caps: normal;
+}
+
+.version-wrapper {
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+  align-items: center;
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+  .version-wrapper li {
+    display: inline-block;
+  }
+
+    .version-wrapper li::after {
+      content: ",\00A0";
+    }
+
+    .version-wrapper li:first-child::after {
+        font-weight: 300;
+        font-style: italic;
+        content: "\00A0of\00A0";
+    }
+
+    .version-wrapper li:last-child::after {
+        content: "";
+    }
+
+    .version {
+    }
+
+    .version a:visited {
+      color: #666666;
+    }
+
+    .version a.w--current {
+      color: tomato;
+    }
+
+    .version a:hover {
+      color: blue;
+    }
+
+#definition-text {
+  margin: 0.75em -1em 0 -1em;
+  padding: 0.1em 1em 0.1em 1em;
+  transition: 250ms;
+}
+
+  #definition-text:hover {
+    background: #fcfcff;
+    box-shadow: inset 1px 2px 7px 0px #e2e2ef;
+  }
+
+  #definition-text:focus {
+    outline: none;
+    background: ghostwhite;
+    box-shadow: inset 1px 2px 7px 0px #bebed6;
   }
 
 .block {

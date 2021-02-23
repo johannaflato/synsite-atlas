@@ -1,20 +1,50 @@
-<div class="stamp stamp-definition">
-  <a>
-    <div>
-      <%- block.content_html %>
-    </div>
-  </a>
-  <p>
-    < VERSIONS >
-    <% for (let definition of definitions) { %>
-      <a href="<%= `/${definition.id}/` %>">
-        <%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy' ) %>
+<div class="stamp definition-wrapper">
+  <header class="definition-header">
+    <h1 class="syn-site">syn·site</h1>
+    <div class="pronounciation">&#712;sin.s&imacr;t</div>
+    <div class="n">noun, verb</div>
+  </header>
+  <ul class="version-wrapper">
+    <li class="version">
+      <a>
+        <%- block.title %> (<%- helpers.dateFnsFormat(new Date(block.created_at),'MM.dd.yyyy')%>)
       </a>
+    </li>
+    <% for (let definition of definitions) { %>
+      <li class="version">
+        <a href="<%= `/${definition.id}/` %>">
+          <%= definition.title %> (<%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy')%>)
+        </a>
+      </li>
     <% } %>
+  </ul>
+  <p class="etym">
+    <b>SYN</b> (along with, at the same time | from Greek <i>SYN</i>, with | <span class="no-caps">~</span><i>SYNTHETIC</i>)
+    <b>+ SITE</b> (<i>N:</i> point of event, occupied space, internet address; <i>V:</i> to place in position |
+    from Latin <i>SITUS</i>, location, idleness, forgetfulness | <span class="no-caps">~</span><i>WEBSITE</i> <span class="no-caps">&not;</span><i>cite</i> <span class="no-caps">&not;</span><i>sight</i>),
+    cf. <b>SITE/NON-SITE</b> (from Robert Smithson, <i>A PROVISIONAL THEORY OF NONSITES</i>, 1968)
   </p>
+  <div id="definition-text" contenteditable="true" data-descr="click to edit">
+    <%- block.content_html %>
+  </div>
   <p>
-    < EDITS? >
-    please freely share any notes or edits you might have in
-      <a href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">> this open are.na channel</a>.
+    <a class="external-link" href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">add edits</a>
   </p>
 </div>
+
+
+<%# <button onclick="toggleVersions()"></button> %>
+
+<%# toggle functions %>
+<% /* %>
+<script type="text/javascript">
+  function toggleVersions() {
+    var versions = <% document.getElementsByClassName("versions"); %>
+    <% if (versions.style.display === "none") { %>
+      <%- versions.style.display = "inline-block"; -%>
+    <% } else { %>
+      <%- versions.style.display = "none"; -%>
+    <% } %>
+  }
+</script>
+<% */ %>
