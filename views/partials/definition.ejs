@@ -1,13 +1,8 @@
 <div class="stamp definition-wrapper">
-  <header class="definition-header">
-    <h1 class="syn-site">syn·site</h1>
-    <div class="pronounciation">&#712;sin.s&imacr;t</div>
-    <div class="n">noun, verb</div>
-  </header>
   <ul class="version-wrapper">
     <li class="version">
       <a>
-        <%- block.title %> (<%- helpers.dateFnsFormat(new Date(block.created_at),'MM.dd.yyyy')%>)
+        <%- block.title %> <%- helpers.dateFnsFormat(new Date(block.created_at),'MM.dd.yyyy')%>
       </a>
     </li>
     <% for (let definition of definitions) { %>
@@ -18,6 +13,14 @@
       </li>
     <% } %>
   </ul>
+  <div class="edits">
+    <b>| </b><a class="external-link" href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">add edits</a>
+  </div>
+  <header class="definition-header">
+    <h1 class="syn-site">syn·site</h1>
+    <div class="pronounciation">sin.s&imacr;t</div>
+    <div class="n">noun, verb</div>
+  </header>
   <p class="etym">
     <b>SYN</b> (along with, at the same time | from Greek <i>SYN</i>, with | <span class="no-caps">~</span><i>SYNTHETIC</i>)
     <b>+ SITE</b> (<i>N:</i> point of event, occupied space, internet address; <i>V:</i> to place in position |
@@ -27,9 +30,6 @@
   <div id="definition-text" contenteditable="true" data-descr="click to edit">
     <%- block.content_html %>
   </div>
-  <p>
-    <a class="external-link" href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">add edits</a>
-  </p>
 </div>
 
 
