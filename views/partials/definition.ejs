@@ -1,21 +1,20 @@
 <div class="stamp definition-wrapper">
-  <ul class="version-wrapper">
-    <li class="version">
-      <a>
-        <%- block.title %> <%- helpers.dateFnsFormat(new Date(block.created_at),'MM.dd.yyyy')%>
-      </a>
-    </li>
+  <button class="this-version" onclick="helpers.toggleVersions()">
+    <%- block.title %> <%- helpers.dateFnsFormat(new Date(block.created_at),'MM.dd.yyyy')%>
+  </button>
+  <p class="line">|</p>
+  <div class="edits">
+    <a class="external-link" href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">add edits</a>
+  </div>
+  <ul id="version-wrapper">
     <% for (let definition of definitions) { %>
       <li class="version">
         <a href="<%= `/${definition.id}/` %>">
-          <%= definition.title %> (<%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy')%>)
+          <%= definition.title %> <%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy')%>
         </a>
       </li>
     <% } %>
   </ul>
-  <div class="edits">
-    <b>| </b><a class="external-link" href="https://www.are.na/johanna-flato/syn-site-edits" target="_blank" rel="noopener noreferrer">add edits</a>
-  </div>
   <header class="definition-header">
     <h1 class="syn-site">syn·site</h1>
     <div class="pronounciation">sin.s&imacr;t</div>
@@ -32,19 +31,14 @@
   </div>
 </div>
 
-
-<%# <button onclick="toggleVersions()"></button> %>
-
-<%# toggle functions %>
-<% /* %>
+<%# toggle functions; not currently working... %>
 <script type="text/javascript">
-  function toggleVersions() {
-    var versions = <% document.getElementsByClassName("versions"); %>
-    <% if (versions.style.display === "none") { %>
-      <%- versions.style.display = "inline-block"; -%>
+  <% function toggleVersions() { %>
+    var v = <% document.getElementByID("version-wrapper"); %>
+    <% if (v.style.display === "none") { %>
+      <%- v.style.display = "inline-block"; -%>
     <% } else { %>
-      <%- versions.style.display = "none"; -%>
+      <%- v.style.display = "none"; -%>
     <% } %>
-  }
+  <% } %>
 </script>
-<% */ %>
