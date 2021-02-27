@@ -12,14 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gutter: 5,
       percentPosition: false,
       stamp: '.stamp',
-      // containerStyle: {
-      //       position: 'absolute'
-      //   },
-      // transitionDuration: '500ms',
       // stagger: 30,
-      // isOriginLeft: false,
-      // isOriginTop: false,
-      // isHorizontal:true,
     });
 
     // adds draggable behavior
@@ -29,3 +22,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// toggle functions
+function toggleVersions(){
+  var v = document.getElementById("version-wrapper");
+  if (v.style.display === "none") {
+    v.style.display = "inline-block";
+  } else {
+    v.style.display = "none";
+  }
+}
+
+function toggleChannels(){
+  var c = document.getElementById("channel-wrapper");
+  if (c.style.display === "none") {
+    c.style.display = "inline-block";
+  } else {
+    c.style.display = "none";
+  }
+}

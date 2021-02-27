@@ -1,0 +1,9 @@
+<ul
+  id="version-wrapper"
+  class="button-list"
+  style="display:none;"
+>
+  <% for (let definition of definitions) { %>
+    <li class="button-list-item"><a href="<%= `/${definition.id}/` %>">
+    <b><%= definition.title %></b> (<%= helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy')%>)</a></li><% } %>
+</ul>

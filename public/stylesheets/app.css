@@ -50,14 +50,33 @@ p {
   font-style: normal;
 }
 
+button {
+  font-size: 16px;
+  margin: 0 0.25em 0.25em 0;
+  padding: 0.25em;
+  border: none;
+  border-radius: 5px;
+  background: yellow;
+  cursor: pointer;
+  outline: none;
+  transition: 250ms;
+  opacity: 0.65;
+}
+
+button:hover {
+  background: yellow;
+  color: #333;
+  opacity: 1;
+}
+
 ::-moz-selection {
   color: #333;
-  background: #ffff4eab;
+  background: #ffff00a1;
 }
 
 ::selection {
   color: #333;
-  background: #ffff4eab;
+  background: #ffff00a1;
 }
 
 .menu {
@@ -184,7 +203,7 @@ p {
 
   .definition-wrapper {
     left: 33vw;
-    top: 30vh;
+    top: 25vh;
     width: 34vw;
     height: auto;
     border: none;
@@ -254,69 +273,42 @@ p {
   font-variant-caps: normal;
 }
 
-.this-version {
-  font-size: 16px;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
-  color: blue;
-}
-
-.this-version:focus {
-  color: #000;
-  outline: none;
-}
-
-.line {
-  padding: 0;
-  margin: 0;
-  display: inline-block;
-  font-size: 22px;
-}
-
-#version-wrapper {
+.button-list {
   margin-top: 0;
   margin-bottom: 0;
-  display: inline-block;
-  align-items: center;
+  align-items: left;
   list-style: none;
   padding-inline-start: 0;
 }
 
-  #version-wrapper li {
+  .button-list li {
     display: inline-block;
   }
 
-    #version-wrapper li::after {
+    .button-list li::after {
+      color: #666666;
       content: ",\00A0";
     }
-/*
-    #version-wrapper li:first-child::before {
-        font-weight: 400;
-        content: "\00A0of\00A0";
-    } */
 
-    #version-wrapper li:last-child::after {
+    .button-list li:last-child::after {
         content: "";
     }
 
-    .version a:visited {
+    .button-list-item a:visited {
       color: #666666;
     }
 
-    .version a.w--current {
+    .button-list-item a.w--current {
       color: tomato;
     }
 
-    .version a:hover {
+    .button-list-item a:hover {
       color: blue;
     }
 
-  .edits {
-    display: inline-block;
-  }
+.edits {
+  display: inline-block;
+}
 
 #definition-text {
   margin: 0.75em -1em 0 -1em;
@@ -381,21 +373,17 @@ p {
   padding-inline-start: 0;
 }
 
-.connections li {
-  display: inline-block;
-}
+  .connections li {
+    display: inline-block;
+  }
 
-.connections li::before {
-  content: ",";
-}
+    .connections li::after {
+      content: ",\00A0";
+    }
 
-.connections li:first-child::before {
-    content: "";
-}
-
-.connections li:nth-child(2)::before {
-    content: "";
-}
+    .connections li:last-child::after {
+      content: "";
+    }
 /*
 .footer-gradient {
   position: fixed;

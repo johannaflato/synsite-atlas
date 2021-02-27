@@ -1,0 +1,8 @@
+<div>
+  <%# specifying user_id so as not to return stranger's channels %>
+  <%# formatted to remove inline whitespace %>
+  <ul class="connections">
+    <i>filed under: </i>
+    <%for (let block of connections){%><%if(block.user_id == '11412'){%><li><a href="<%=`${definitionPathPrefix}/channels/${block.slug}` %>"><%-block.title-%></a>%></li><%}%><%}%>
+  </ul>
+</div>

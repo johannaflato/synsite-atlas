@@ -1,0 +1,8 @@
+<ul
+  id="channel-wrapper"
+  class="button-list"
+>
+  <% for (let block of mainchannels) { %>
+    <li class="button-list-item"><a href="<%= `${definitionPathPrefix}/channels/${block.slug}` %>">
+    <%= block.title %></a></li><% } %>
+</ul>
