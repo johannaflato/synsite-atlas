@@ -20,6 +20,7 @@ const blocks = require('./routes/blocks');
 
 const helpers = require('./middleware/helpers');
 const definitions = require('./middleware/definitions');
+const mainchannels = require('./middleware/mainchannels');
 
 const app = express();
 
