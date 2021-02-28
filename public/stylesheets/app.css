@@ -53,9 +53,9 @@ p {
 button {
   font-size: 16px;
   margin: 0 0.25em 0.25em 0;
-  padding: 0.25em;
+  padding: 0.25em 0.5em 0.25em 0.5em;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   background: yellow;
   cursor: pointer;
   outline: none;
@@ -92,7 +92,7 @@ button:hover {
 }
 
 .fa {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .grid {
@@ -163,27 +163,6 @@ button:hover {
     color: black;
   }
 
-.channel-title {
-  position: absolute;
-  top: 26vh;
-  margin-top: -14px;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  letter-spacing: 1.8px;
-  color: #666666;
-}
-
-  .channel-title p {
-    display: inline-block;
-    font-weight: 400;
-  }
-
-  .channel-title h2 {
-    display: inline-block;
-    font-weight: 400;
-  }
-
 .stamp {
   position: absolute;
   width: 15vw;
@@ -248,8 +227,7 @@ button:hover {
   }
 
 .etym {
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  margin-top: 0.25em;
   font-family: halyard-micro, Arial, 'Helvetica Neue', Helvetica, sans-serif;
   letter-spacing: -0.25px;
   line-height: 1.1;
@@ -258,6 +236,7 @@ button:hover {
   -moz-font-feature-settings: "c2sc", "smcp";
   -webkit-font-feature-settings: "c2sc", "smcp";
   font-feature-settings: "c2sc", "smcp";
+  text-align: justify;
 }
 
 .etym b {
@@ -310,8 +289,9 @@ button:hover {
 }
 
 #definition-text {
-  margin: 0.75em -1em 0 -1em;
+  margin: 0 -1em 0 -1em;
   padding: 0.1em 1em 0.1em 1em;
+  text-align: justify;
   transition: 250ms;
 }
 
@@ -358,11 +338,6 @@ button:hover {
   min-height: 25vh;
   margin: 0 auto;
   padding: 5px 5px 2em 5px;
-  font-size: 14px;
-}
-
-.block-metadata-title {
-  font-size: 16px;
 }
 
 .connections {

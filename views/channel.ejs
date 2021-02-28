@@ -16,6 +16,8 @@
         <%- include('partials/block-attachment', { block, definitionPathPrefix}); -%>
       <% } else if (block.class == 'Media') { %>
         <%- include('partials/block-media', { block, definitionPathPrefix}); -%>
+      <% } else if (block.class == 'Channel' && block.user_id == '11412') { %>
+        <%- include('partials/channel-block', { block, definitionPathPrefix }); -%>
       <% } %>
     <% } %>
   </div>
