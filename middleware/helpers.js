@@ -1,4 +1,3 @@
-const slugify = require('@sindresorhus/slugify')
 const format = require('date-fns/format')
 
 const shuffle = (xs) => {
@@ -20,7 +19,6 @@ const rand = (min, max) =>
 
 module.exports = (req, res, next) => {
   res.locals.helpers = {
-    slugify,
     shuffle,
     rand,
     dateFnsFormat: format

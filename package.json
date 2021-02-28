@@ -6,7 +6,6 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "^1.1.0",
     "are.na": "^0.0.7",
     "axios": "^0.21.1",
     "body-parser": "~1.18.2",
