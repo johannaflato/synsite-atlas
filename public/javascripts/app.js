@@ -1,5 +1,7 @@
+var grid = document.querySelector('.grid');
+
 document.addEventListener("DOMContentLoaded", () => {
-  imagesLoaded('.grid', () => {
+  imagesLoaded(grid, () => {
     const images = Array.from(document.querySelectorAll('img'));
     for (let image of images) {
       // triggers fade-in
@@ -7,13 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // sets up grid layout
-    const packery = new Packery('.grid', {
+    const packery = new Packery(grid, {
       itemSelector: '.grid-block',
       gutter: 5,
       percentPosition: false,
       stamp: '.stamp',
       // stagger: 30,
     });
+
+    // grid.addEventListener( 'click', function( event ) {
+    //   // filter for grid-block clicks
+    //   if (!event.target.classList.contains("grid-block") ) {
+    //     return;
+    //   }
+    //   event.target.classList.toggle("grid-block--large");
+    //   packery.layout();
+    // });
 
     // adds draggable behavior
     for (let item of packery.items) {

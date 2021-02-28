@@ -137,6 +137,14 @@ button:hover {
   z-index: 2;
 }
 
+/* .grid-block--large {
+  width: 30VW;
+  height: 30VW;
+  filter: grayscale(0);
+  opacity: 1;
+  z-index: 2;
+}
+ */
   .channel-block {
     font-size: 14px;
     letter-spacing: 1.8px;
