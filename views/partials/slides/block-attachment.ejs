@@ -1,0 +1,20 @@
+<div
+  class="slide-block"
+  href="https://www.are.na/block/<%=id%>" target="_blank" rel="noopener noreferrer"
+>
+  <img src="<%= block.image.display.url %>" />
+</div>
+<div class="block-metadata">
+  <h2 class="block-metadata-title"><%= title %></h2>
+  <% if (description_html) { %>
+    <div class="block-metadata-description">
+      <%- description_html %>
+    </div>
+  <% } %>
+  <%- include('partials/lists/connections'); -%>
+  <% if (source) { %>
+    <div class="block-metadata-source">
+      <i>source: </i><a class="external-link" href="<%= source.url %>"><%= source.title %></a>
+    </div>
+  <% } %>
+</div>

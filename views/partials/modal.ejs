@@ -1,0 +1,20 @@
+<div id="blockModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+    <% for (let block of contents) { %>
+      <% if (block.class == 'Image') { %>
+        <%- include('slides/block-image'); -%>
+      <% } else if (block.class == 'Text') { %>
+        <%- include('slides/block-text'); -%>
+      <% } else if (block.class == 'Link') { %>
+        <%- include('slides/block-link'); -%>
+      <% } else if (block.class == 'Attachment') { %>
+        <%- include('slides/block-attachment'); -%>
+      <% } else if (block.class == 'Media') { %>
+        <%- include('slides/block-media'); -%>
+      <% } %>
+    <% } %>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+</div>
