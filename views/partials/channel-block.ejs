@@ -9,3 +9,26 @@
 >
   <%= block.title %>
 </a>
+
+<a
+  class="grid-block channel-block-medium"
+  href="<%= `${definitionPathPrefix}/channels/${block.slug}` %>"
+  style="
+  --padding: <%= helpers.rand(2, 3.5) %>em;
+  --margin: <%= helpers.rand(0.25, 4) %>em;
+  --original-rotation: <%= helpers.rand(-15, 15) %>deg;
+  --hover-rotation: <%= helpers.rand(-15, 15) %>deg;"
+>
+  <%= block.title %>
+</a>
+
+<a
+  class="grid-block channel-block-small"
+  href="<%= `${definitionPathPrefix}/channels/${block.slug}` %>"
+  style="
+  --width: <%= helpers.rand(36,48) %>vw;
+  --margin: <%= helpers.rand(0.25, 1) %>em;
+  --original-rotation: <%= helpers.rand(-15, 15) %>deg;"
+>
+  <%= block.title %>
+</a>

@@ -1,5 +1,5 @@
 <a
-  class="grid-block"
+  class="grid-block large-display"
   href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
   style="
   --width: <%= helpers.rand(150, 250) %>px;
@@ -9,4 +9,23 @@
   <img src="<%= block.image.display.url %>" />
 </a>
 
-<%# add 'show' link to view full attachment on are.na %>
+<a
+  class="grid-block medium-display"
+  href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
+  style="
+  --width: <%= helpers.rand(100, 200) %>px;
+  --original-rotation: <%= helpers.rand(-20, 20) %>deg;
+  --hover-rotation: <%= helpers.rand(-20, 20) %>deg;"
+>
+  <img src="<%= block.image.display.url %>" />
+</a>
+
+<a
+  class="grid-block small-display"
+  href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
+  style="
+  --width: <%= helpers.rand(75, 150) %>px;
+  --original-rotation: <%= helpers.rand(-20, 20) %>deg;"
+>
+  <img src="<%= block.image.display.url %>" />
+</a>

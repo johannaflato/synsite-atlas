@@ -96,10 +96,7 @@ button:hover {
 }
 
 .grid {
-  padding-top: 50px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding: 4em;
   width: 100VW;
   height: 100%;
   overflow-x: hidden;
@@ -107,10 +104,7 @@ button:hover {
 
 .grid-block {
   float: left;
-  width: var(--width);
-  /* font-family: ibm-plex-mono, cousine, courier, monospace; */
   font-weight: 400;
-  display: inline-block;
   border: none;
   border-radius: 0;
   padding: 0;
@@ -137,6 +131,21 @@ button:hover {
   z-index: 2;
 }
 
+  .large-display {
+    display: inline-block;
+    width: var(--width);
+  }
+
+  .medium-display {
+    display: none;
+    width: var(--width);
+  }
+
+  .small-display {
+    display: none;
+    width: var(--width);
+  }
+
 /* .grid-block--large {
   width: 30VW;
   height: 30VW;
@@ -146,12 +155,39 @@ button:hover {
 }
  */
   .channel-block {
+    display: inline-block;
+    width: auto;
     font-size: 14px;
     letter-spacing: 1.8px;
-    width: auto;
     text-align: center;
     border:1px dashed blue;
     padding: var(--padding);
+    margin: var(--margin);
+    filter: grayscale(0);
+  }
+
+  .channel-block-medium {
+    display: none;
+    width: auto;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    border:1px dashed blue;
+    padding: var(--padding);
+    margin: var(--margin);
+    filter: grayscale(0);
+  }
+
+  .channel-block-small {
+    display: none;
+    width: var(--width);
+    height: auto;
+    font-size: 12px;
+    letter-spacing: 1.4px;
+    overflow-wrap: break-word;
+    text-align: center;
+    border:1px dashed blue;
+    padding: 1.25em;
     margin: var(--margin);
     filter: grayscale(0);
   }
@@ -189,7 +225,7 @@ button:hover {
 
   .definition-wrapper {
     left: 33vw;
-    top: 25vh;
+    top: 22vh;
     width: 34vw;
     height: auto;
     border: none;
@@ -313,6 +349,13 @@ button:hover {
     background: ghostwhite;
     box-shadow: inset 1px 2px 7px 0px #bebed6;
   }
+
+#definition-text-mobile {
+  display: none;
+  margin: 0 -1em 0 -1em;
+  padding: 0.1em 1em 0.1em 1em;
+  text-align: justify;
+}
 
 .block {
   display: flex;
@@ -447,14 +490,26 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* large tablets (portrait), small tablets (landscape), small laptops etc */
 @media only screen and (max-width: 1200px) {
   body, button {
     font-size: 14px;
   }
 
+  .large-display {
+    display: none;
+  }
+
+  .medium-display {
+    display: inline-block;
+  }
+
   .channel-block {
-    font-size: 12px;
-    letter-spacing: 1.4px;
+    display: none;
+  }
+
+  .channel-block-medium {
+    display: inline-block;
   }
 
   .syn-site {
@@ -462,7 +517,7 @@ button:hover {
   }
 
   .pronounciation, .n {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .definition-wrapper {
@@ -481,11 +536,44 @@ button:hover {
 
 }
 
-@media only screen and (max-width: 768px) {
+/* small tablets */
+@media only screen and (max-width: 992px) {
   body, html {
     height: 100%;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
+  }
+
+  .grid-block:hover {
+    transform: none;
+  }
+
+  .medium-display {
+    display: none;
+  }
+
+  .small-display {
+    display: inline-block;
+  }
+
+  .text-block {
+    padding: 0.25em;
+    font-size: 9px;
+    height: var(--height);
+    overflow: hidden;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(31%, #000), to(#fff));
+    background-image: linear-gradient(180deg, #000 31%, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .channel-block-medium {
+    display: none;
+  }
+
+  .channel-block-small {
+    display: inline-block;
   }
 
   .syn-site {
@@ -496,13 +584,12 @@ button:hover {
     font-size: 24px;
   }
 
-  .definition-wrapper {
-    position: fixed;
-    left: 40vw;
-    top: 15vh;
-    width: 54vw;
-    margin: 1em 3vw 1em 3vw;
-    padding: 1em;
+  #definition-text {
+    display: none;
+  }
+
+  #definition-text-mobile {
+    display: block;
   }
 
   .content-show {
@@ -512,12 +599,59 @@ button:hover {
   .block-metadata {
     max-width: 80%;
   }
-
 }
 
-@media only screen and (max-width: 600px) {
+/* phones & small tablets -- landscape */
+@media only screen and (max-width: 992px) and (orientation: landscape) {
+  .grid {
+    padding: 2em 1em 2em 1em;
+  }
+
+  .blank-stamp-top-left {
+    width:150px;
+    height: 30px;
+  }
+
   .definition-wrapper {
-    top: 10vh;
+    position: fixed;
+    overflow: scroll;
+    left: 29vw;
+    top: 0;
+    bottom: 0;
+    width: 42vw;
+    height: 100%;
+    margin: 0 -1em 0 -1em;
+    padding: 2em 2.6vw 1em 2.6vw;
+    background: ghostwhite;
+  }
+
+  .content-show {
+    max-width: 90%;
+  }
+
+  .block-metadata {
+    max-width: 90%;
+  }
+}
+
+/* phones -- portrait */
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+  .grid {
+    padding: 2em 1em 2em 1em;
+  }
+
+  .blank-stamp-top-left {
+    width:150px;
+    height: 30px;
+  }
+
+  .definition-wrapper {
+    left: 0;
+    top: 40vh;
+    width: 100vw;
+    margin: -1.5em 0 -1.5em 0;
+    padding: 1.7em 7vw 1.7em 7vw;
+    background: ghostwhite;
   }
 
   .content-show {
