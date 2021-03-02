@@ -25,12 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     //   event.target.classList.toggle("grid-block--large");
     //   packery.layout();
     // });
+  // adds draggable behavior
+  for (let item of pckry.items) {
+    const drag = new Draggabilly(item.element);
+    pckry.bindDraggabillyEvents(drag);
+  }
 
-    // adds draggable behavior
-    for (let item of packery.items) {
-      const drag = new Draggabilly(item.element);
-      packery.bindDraggabillyEvents(drag);
-    }
   });
 });
 

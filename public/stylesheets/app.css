@@ -131,17 +131,29 @@ button:hover {
   filter: grayscale(0);
   opacity: 1;
   z-index: 2;
+  cursor: move;
 }
 
   .large-display {
     display: inline-block;
     width: var(--width);
   }
+.grid-block.is-dragging,
+.grid-block.is-positioning-post-drag {
+  opacity: 1;
+  z-index: 2;
+}
 
   .medium-display {
     display: none;
     width: var(--width);
   }
+.packery-drop-placeholder {
+  outline: 1px dashed crimson;
+  background: #ed143d12;
+  -webkit-transition: -webkit-transform 0.2s;
+          transition: transform 0.2s;
+}
 
   .small-display {
     display: none;
@@ -211,6 +223,13 @@ button:hover {
     padding: 1.25em;
     margin: var(--margin);
     filter: grayscale(0);
+  }
+
+  .channel-block:hover,
+  .channel-block-small:hover,
+  .channel-block-medium:hover,
+  .channel-block-large:hover {
+    cursor: pointer;
   }
 
   .text-block {
