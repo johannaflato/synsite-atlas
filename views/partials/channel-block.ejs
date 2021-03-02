@@ -26,6 +26,17 @@
   class="grid-block channel-block-small"
   href="<%= `${definitionPathPrefix}/channels/${block.slug}` %>"
   style="
+  --width: <%= helpers.rand(13,19) %>vw;
+  --margin: <%= helpers.rand(0.25, 2) %>em;
+  --original-rotation: <%= helpers.rand(-15, 15) %>deg;"
+>
+  <%= block.title %>
+</a>
+
+<a
+  class="grid-block channel-block-x-small"
+  href="<%= `${definitionPathPrefix}/channels/${block.slug}` %>"
+  style="
   --width: <%= helpers.rand(36,48) %>vw;
   --margin: <%= helpers.rand(0.25, 1) %>em;
   --original-rotation: <%= helpers.rand(-15, 15) %>deg;"

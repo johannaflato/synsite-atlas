@@ -2,6 +2,7 @@
 <main id="show">
   <%- include('partials/nav'); -%>
   <div class="block">
+    <div class="back-x cursor" onclick="goBack()">&times;</div>
     <% if (embed) { %>
       <a href="<%= source.url %>"><img src="<%= image.large.url %>" /></a>
     <% } else if (content) {%>
