@@ -1,38 +1,32 @@
 <a
-  class="grid-block large-display text-block"
+  class="grid-block dimensions large-display text-block"
   href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
   style="
   --width: <%= helpers.rand(200, 350) %>px;
   --original-rotation: <%= helpers.rand(-10, 10) %>deg ;
   --hover-rotation: <%= helpers.rand(-10, 10) %>deg;"
 >
-  <div>
-    <%- block.content_html %>
-  </div>
+  <%- block.content_html %>
 </a>
 
 <a
-  class="grid-block medium-display text-block"
+  class="grid-block dimensions medium-display text-block"
   href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
   style="
   --width: <%= helpers.rand(150, 250) %>px;
   --original-rotation: <%= helpers.rand(-10, 10) %>deg;
   --hover-rotation: <%= helpers.rand(-10, 10) %>deg;"
 >
-  <div>
-    <%- block.content_html %>
-  </div>
+  <%- block.content_html %>
 </a>
 
 <a
-  class="grid-block small-display text-block"
+  class="grid-block dimensions small-display text-block"
   href="<%= `${definitionPathPrefix}/blocks/${block.id}` %>"
   style="
   --width: <%= helpers.rand(90, 150) %>px;
   --height: <%= helpers.rand(90, 150) %>px;
   --original-rotation: <%= helpers.rand(-10, 10) %>deg;"
 >
-  <div>
-    <%- block.content_html %>
-  </div>
+  <%- block.content_html %>
 </a>

@@ -106,6 +106,7 @@ button:hover {
 
 .grid-block {
   float: left;
+  font-size: 10px;
   font-weight: 400;
   border: none;
   border-radius: 0;
@@ -134,20 +135,12 @@ button:hover {
   cursor: move;
 }
 
-  .large-display {
-    display: inline-block;
-    width: var(--width);
-  }
 .grid-block.is-dragging,
 .grid-block.is-positioning-post-drag {
   opacity: 1;
   z-index: 2;
 }
 
-  .medium-display {
-    display: none;
-    width: var(--width);
-  }
 .packery-drop-placeholder {
   outline: 1px dashed crimson;
   background: #ed143d12;
@@ -155,17 +148,15 @@ button:hover {
           transition: transform 0.2s;
 }
 
-  .small-display {
-    display: none;
-    width: var(--width);
+.dimensions {
+  width: var(--width);
+}
+
+  .dimensions--zoom {
+    width: 30vw;
+    font-size: 14px;
   }
 
-/* .grid-block--large {
-  width: 30VW;
-  height: 30VW;
-  filter: grayscale(0);
-  opacity: 1;
-  z-index: 2;
 .large-display {
   display: inline-block;
 }
@@ -236,7 +227,6 @@ button:hover {
     color: black;
     padding: 1.5em;
     text-align: left;
-    font-size: 10px;
   }
 
   .text-block b {
