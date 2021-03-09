@@ -13,7 +13,7 @@ imagesLoaded( grid, function() {
     gutter: 5,
     percentPosition: false,
     stamp: '.stamp',
-    stagger: 20,
+    // stagger: 20,
   });
 
   // adds draggable behavior

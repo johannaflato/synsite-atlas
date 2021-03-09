@@ -16,7 +16,7 @@ if (!process.env.ARENA_CHANNEL_ID) {
 
 const index = require('./routes/index');
 const channels = require('./routes/channels');
-const blocks = require('./routes/blocks');
+const block = require('./routes/block');
 
 const helpers = require('./middleware/helpers');
 const definitions = require('./middleware/definitions');
@@ -45,7 +45,7 @@ app
 router
   .use('/', index)
   .use('/channels', channels)
-  .use('/blocks', blocks); 
+  .use('/block', block); 
 
 // Mount router routes twice, once at the root level
 // and once under a slug for the definition version/block-id
@@ -66,7 +66,7 @@ app.use((err, req, res, next) => {
   res.locals.error = {};
   if (process.env.NODE_ENV !== 'production') {
     res.locals.error =  err;
-    res.locals.error.stack = cleanStack(err.stack, { pretty: true, })      
+    res.locals.error.stack = cleanStack(err.stack, { pretty: true, })
   }
   res.locals.status = status;
   res.status(status);
