@@ -339,7 +339,7 @@ button:hover {
 
     .button-list li::after {
       color: #666666;
-      content: ",\00A0";
+      content: ",";
     }
 
     .button-list li:last-child::after {

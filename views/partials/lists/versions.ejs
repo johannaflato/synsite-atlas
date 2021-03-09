@@ -5,7 +5,7 @@
 >
   <% for (let definition of definitions) { %>
     <li class="button-list-item"><a href="<%= `/${definition.id}/` %>">
-    <b><%= definition.title %></b> (<% if (definition.created_at >= '2021-03-09T16:25:53.867Z') { %><%=
+    <b><%= definition.title %>: </b><% if (definition.created_at >= '2021-03-09T16:25:53.867Z') { %><%=
       helpers.dateFnsFormat(new Date(definition.created_at),'MM.dd.yyyy') %><% }
-      else { %><%= definition.description %><% } %>)</a></li><% } %>
+      else { %><%= definition.description %><% } %></a></li><% } %>
 </ul>
