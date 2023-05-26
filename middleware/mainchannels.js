@@ -5,7 +5,7 @@ const { ARENA_CHANNEL_ID } = process.env;
 
 module.exports = async (req, res, next) => {
   const arena = new Arena();
-  const data = await paginatedChannelGet(arena, ARENA_CHANNEL_ID);
+  const data = await paginatedChannelGet(arena, 'syn-site');
   // filter syn-site channel's blocks by the 'Channel' class
   const mainchannels = data.contents
     .filter(block => block.class == 'Channel');
