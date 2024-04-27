@@ -3,21 +3,22 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "vercel dev"
   },
   "dependencies": {
-    "are.na": "^0.0.7",
-    "axios": "^0.21.2",
-    "body-parser": "~1.18.2",
-    "clean-stack": "^3.0.1",
-    "cookie-parser": "~1.4.3",
-    "date-fns": "^2.17.0",
-    "debug": "~3.1.0",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.7",
+    "are.na": "^0.1.5",
+    "axios": "^1.6.8",
+    "body-parser": "~1.20.2",
+    "clean-stack": "^5.2.0",
+    "cookie-parser": "~1.4.6",
+    "date-fns": "^3.6.0",
+    "debug": "^4.3.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^5.0.0-alpha.8",
-    "morgan": "~1.9.0",
-    "path-to-regexp": "^6.2.0",
-    "serve-favicon": "~2.4.5"
+    "morgan": "~1.10.0",
+    "path-to-regexp": "^6.2.2",
+    "serve-favicon": "~2.5.0",
+    "uuid": "^9.0.1"
   }
 }
