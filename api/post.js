@@ -49,36 +49,3 @@ const returnResults = (event) => {
 }
 
 postButton.addEventListener('click', returnResults);
-
-// Requesting authorization
-// To request the authorization token, you should redirect users to the authorize endpoint:
-//
-// http://dev.are.na/oauth/authorize
-//    ?client_id=YOUR_CLIENT_ID
-//    &redirect_uri=YOUR_CALLBACK_URL
-//    &response_type=code
-// If the user authorizes the your application they will be redirected back to
-//
-// YOUR_CALLBACK_URL/?code=CODE
-
-// To request the access token,
-// you should use the returned code and exchange it for a access token.
-// To do that you can use any HTTP client.
-
-// POST https://dev.are.na/oauth/token
-//    ?client_id=THE_ID
-//    &client_secret=THE_SECRET
-//    &code=RETURNED_CODE
-//    &grant_type=authorization_code
-//    &redirect_uri=YOUR_CALLBACK_URL
-//
-// Response
-// The response will be in JSON
-//
-// {
-//    "access_token": "ACCESS_TOKEN",
-//    "token_type": "bearer",
-//    "expires_in": null
-// }
-//
-// You can now make authenticated requests to the API signed with this access token.
