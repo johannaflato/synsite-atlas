@@ -2,6 +2,10 @@
 directory = "netlify/functions"
 node_bundler = "esbuild"
 
+[dev]
+command = "node netlify/functions/app.js"  # Command to start your Express server
+targetPort = 3000  # Port your Express app runs on; adjust if different
+
 [[redirects]]
 from = "/api/*"
 to = "/.netlify/functions/api/:splat"
