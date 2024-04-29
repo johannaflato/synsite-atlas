@@ -1,4 +1,9 @@
 const express = require('express');
+const serverless = require('serverless-http');
+const app = express();
+const jwt = require('jsonwebtoken');
+
+const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -22,8 +27,6 @@ const helpers = require('./middleware/helpers');
 const definitions = require('./middleware/definitions');
 const mainchannels = require('./middleware/mainchannels');
 
-const app = express();
-
 // Setup views
 app
   .set('views', path.join(__dirname, 'views'))
@@ -41,7 +44,7 @@ app
   // add current or matched definition to template res.locals
   .use(definitions)
   // add main channels to template res.locals
-  .use(mainchannels);
+  .use(mainchannels)
 
 // Setup view router
 router
@@ -76,3 +79,5 @@ app.use((err, req, res, next) => {
 });
 
 module.exports = app;
+
+module.exports.handler = serverless(app);

@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node netlify/functions/app.js"
   },
   "dependencies": {
     "are.na": "^0.0.7",
     "axios": "^0.28.0",
-    "body-parser": "~1.18.2",
+    "body-parser": "^1.20.2",
     "clean-stack": "^3.0.1",
     "cookie-parser": "~1.4.3",
     "date-fns": "^2.17.0",
@@ -18,6 +18,10 @@
     "express": "^5.0.0-beta.3",
     "morgan": "~1.9.0",
     "path-to-regexp": "^6.2.0",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "expo-cli": "^4.0.17"
   }
 }
